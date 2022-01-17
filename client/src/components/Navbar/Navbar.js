@@ -17,7 +17,7 @@ const Navbar = () => {
                   </div>
                   <Toolbar className={classes.toolbar}>
                       {user ? (
-                         <div className={classes.profile}>                                                              //first letter of name
+                         <div className={classes.profile}>                                                              {/* first letter of name */}
                             <Avatar className={classes.purple} alt={user.result.name} src={user.result.imageUrl}>{user.result.name.charAt(0)}</Avatar> // Avatar
                             <Typography className={classes.userName} variant="h6">{user.result.name}</Typography> //userName
                             <Button variant="contained" className={classes.logout} color="secondary">Logout</Button>

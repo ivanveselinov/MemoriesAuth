@@ -13,6 +13,7 @@ const App = () => {
         
         <BrowserRouter>
             <Container maxwidth ="lg">
+              
               <Navbar/>            {/* NavBar */}
                 <Switch>   {/* Switch bettween 2 components */}
                     <Route>
