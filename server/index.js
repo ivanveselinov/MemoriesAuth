@@ -3,7 +3,9 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import postRoutes from './routes/posts.js' // Import routes -> posts.js
+
+import postRoutes from './routes/posts.js' // Import postsRoutes -> posts.js
+import userRoutes from './routes/users.js' // Import UsersRoutes -> users.js
 
 const app = express();
 dotenv.config();
@@ -13,6 +15,7 @@ app.use(bodyParser.urlencoded({ limit: '30mb', extended: true })); // Set limit 
 app.use(cors());
 
 app.use('/posts', postRoutes); // posts.js routes is now setuped localhost:4000/posts
+app.use('user',userRoutes);    // user.js routes is not setuped localhost:4000/posts
 
 //connection to db
 const PORT = process.env.PORT || 4000; // Add port 

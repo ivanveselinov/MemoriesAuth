@@ -7,31 +7,37 @@ import Icon from './Icon'; // GOOGLE ICON IMPORTED
 import Input from './Input';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { signin, signup } from '../../actions/auth';
 
-const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: ''};
+const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: ''};  //empty state!
 
 const Auth = () => {
     
     const classes = useStyles();
     const [showPassword, setShowPassword] = useState(false);  // Props for show password
     const [isSignUp, setIsSignUp] = useState(false);          // Switch between sign In and sign Up
-    const [formData, setFormData] = useState(initialState);   // Initial State for Login from BackEnd
+    const [formData, setFormData] = useState(initialState);   // Initial State for Login/SignUp 
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e) => {   // Just for submit form
         e.preventDefault();
-        console.log(formData);
-        console.log(Error)
+        
+        if(isSignUp){ //sign up         
+            dispatch(signup(formData, history)) 
+        }else { //sign in
+            dispatch(signup(formData, history)) 
+        }
     }
 
-    const handleChange = () => {
-       
+    const handleChange = (e) => {    // For the Fields
+                                    // Change by name  //get value
+        setFormData({ ...FormData, [e.target.name]: e.target.value })
     }
 
     const switchMode = () => {
         setIsSignUp((prevIsSignUp) => !prevIsSignUp );
-        handleShowPassword(false);
+        setShowPassword(false);
     }
 
     // GOOGLE LOGIN! 

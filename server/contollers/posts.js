@@ -1,5 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
+
 import PostMessage from "../models/postMessage.js";
 
 
@@ -75,10 +76,20 @@ export const likePost = async (req, res) => {
 
     const { id } = req.params;
 
+    if(!req.userId) return json({ message: 'Unauthenticated' }) // If user is online!
+
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
 
     const post = await PostMessage.findById(id);
-    const updatedPost = await PostMessage.findByIdAndUpdate(id, { likeCount: post.likeCount + 1 }, { new: true }) //Increment
+
+    const index = post.likes.findIndex((id) => id === String(req.userId)); //loop try id's to with is liked and if he liked to dislike
+
+    if(index === -1){ // Check if post is liked 
+        post.likes.push(req.userId) // like post
+    } else{  //dislike
+        post.likes = post.likes.filter((id) => id !== String(req.userId));
+    }
+    const updatedPost = await PostMessage.findByIdAndUpdate(id, post, { new: true }) //Increment
 
     res.json(updatedPost);
 }
