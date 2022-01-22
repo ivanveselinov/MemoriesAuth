@@ -1,4 +1,7 @@
-import jwt, { decode } from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
+
+const secret = 'test';
+
     //request //response //do something and move to next thing
 const auth = async (req, res, next) => {
     try {
@@ -8,7 +11,7 @@ const auth = async (req, res, next) => {
         let decodedData;
                     //Working with our login and else is with Google Auth
         if(token && isCustomAuth){  //token and secret -> must be same secret 
-            decodedData = jtw.verify(token, 'test'); 
+            decodedData = jtw.verify(token, secret); 
 
             req.userId = decodedData?.id;
         }else {

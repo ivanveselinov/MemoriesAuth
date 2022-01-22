@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ limit: '30mb', extended: true })); // Set limit 
 app.use(cors());
 
 app.use('/posts', postRoutes); // posts.js routes is now setuped localhost:4000/posts
-app.use('user',userRoutes);    // user.js routes is not setuped localhost:4000/posts
+app.use('/user',userRoutes);    // user.js routes is not setuped localhost:4000/posts
 
 //connection to db
 const PORT = process.env.PORT || 4000; // Add port 

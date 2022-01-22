@@ -3,7 +3,7 @@ import { AUTH } from '../constants/actionTypes';
 import * as api from '../api/index.js';
 
                 // SIGN IN
-export const signin = (formData, history) => async (dispatch) => {
+export const signIn = (formData, history) => async (dispatch) => {
     try {
         const { data } = await api.signIn(formData);  // pass data from API INDEX
 
@@ -16,7 +16,7 @@ export const signin = (formData, history) => async (dispatch) => {
 }
 
                 // SIGN UP
-export const signup = (formData, history) => async (dispatch) => {
+export const signUp = (formData, history) => async (dispatch) => {
     try {
         const { data } = await api.signUp(formData);  // pass data from API INDEX
 
