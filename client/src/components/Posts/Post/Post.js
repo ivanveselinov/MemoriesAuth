@@ -19,7 +19,7 @@ function Post({ post, setCurrentId }) {
            <CardMedia className={classes.media} image={post.selectedFile} title={post.title}/>
                      {/* Name - Creator */}
            <div className={classes.overlay}>
-              <Typography variant="h6">{post.creator}</Typography>
+              <Typography variant="h6">{post.name}</Typography>
               <Typography variant="body2">{moment(post.createdAt).fromNow()}</Typography>
            </div>
                         {/* Edit Button */}

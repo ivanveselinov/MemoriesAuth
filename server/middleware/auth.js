@@ -5,16 +5,17 @@ const secret = 'test';
     //request //response //do something and move to next thing
 const auth = async (req, res, next) => {
     try {
+        
         const token = req.headers.authorization.split(" ")[1];
         const isCustomAuth = token.length < 500; // if token is greater then 500 then we are going with Google Auth else Login Sign up
 
         let decodedData;
                     //Working with our login and else is with Google Auth
         if(token && isCustomAuth){  //token and secret -> must be same secret 
-            decodedData = jtw.verify(token, secret); 
+            decodedData = jwt.verify(token, secret); 
 
             req.userId = decodedData?.id;
-        }else {
+        } else {
             decodedData = jwt.decode(token);
 
             req.userId = decodedData?.sub;  //sum is google name for some specific id!
