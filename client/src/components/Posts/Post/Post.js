@@ -58,9 +58,9 @@ function Post({ post, setCurrentId }) {
 
                         {/* Card For Like and Delete  */}
            <CardActions className={classes.cardActions}>
+              
                         {/* LIKE */}
                <Button size="small" color="primary" disabled={!user?.result} onClick= {() => dispatch(likePost(post._id)) }>
-                  <ThumbUpAltIcon fontSize="small" />
                      <Likes/> {/* Import Component */}
                </Button>
                         {/* DELETE */}

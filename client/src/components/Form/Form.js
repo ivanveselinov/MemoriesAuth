@@ -31,7 +31,7 @@ function Form({ currentId, setCurrentId }) {
         clear();  // Call function clear to remove everything once is submited
     }
 
-    // IF NO USER IS LOGGED IN 
+    // IF NO USER IS LOGGED IN -- HIDE ALL CREATE FORM
     if(!user?.result?.name) {
         return (
             <Paper className={classes.paper}>
