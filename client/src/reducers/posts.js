@@ -8,11 +8,11 @@ export default (posts = [], action) => {
             return action.payload;
         case CREATE :      //create
             return [...posts, action.payload];
-        default:
-            return posts;
         case UPDATE :       //update     
             return posts.map((post) => (post._id === action.payload._id ? action.payload : post));
         case DELETE :       //Delete
             return posts.filter((post) => post._id !== action.payload);
+            default:
+                return posts;
     }
 }

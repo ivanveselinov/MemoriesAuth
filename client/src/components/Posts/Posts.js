@@ -7,7 +7,7 @@ import { Grid, CircularProgress } from '@material-ui/core'
 
 function Posts({ currentId, setCurrentId }) {
     const posts = useSelector((state) => state.posts); //from index reduxer posts
-    console.log(posts)
+    // console.log(posts)
 
     const classes = useStyles();
 

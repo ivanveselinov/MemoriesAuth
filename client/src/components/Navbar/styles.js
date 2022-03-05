@@ -13,7 +13,7 @@ export default makeStyles((theme) => ({
     color: 'rgba(0,183,255, 1)',
   },
   image: {
-    marginLeft: '15px',
+    marginLeft: '15px', width: '340px'
   },
  [theme.breakpoints.down('sm')]: {  //small devices
     mainContainer: {

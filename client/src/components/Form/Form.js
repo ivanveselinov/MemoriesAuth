@@ -3,7 +3,7 @@ import useStyles from './styles'
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import FileBase from 'react-file-base64'
 import { useDispatch } from 'react-redux';
-import { createPosts, updatePost } from '../../actions/posts';
+import { createPost, updatePost } from '../../actions/posts';
 import { useSelector } from 'react-redux';
 
 // GET THE CURRENT ID
@@ -18,15 +18,16 @@ function Form({ currentId, setCurrentId }) {
     useEffect (() => {    // Update fetch info on screen
         if(post) setPostData(post);
     }, [post]);
+ 
+    //CREATE UPDATE/ POST LOGIC   ### CRASHING ON UPDATE!!! SHOULD HAVE A LOOK === 0 THEN UPDATE IS WORKING!
+    const handleSubmit = async (e) => {
 
-    //CREATE UPDATE/ POST LOGIC
-    const handleSubmit = (e) => {
         e.preventDefault();
         
-        if(currentId === 0) {
-            dispatch(updatePost(currentId, {...postData, name: user?.result?.name }));
+        if(currentId <= 0) {
+            dispatch(createPost({ ...postData, name: user?.result?.name }));
         } else {
-        dispatch(createPosts({ ...postData, name: user?.result?.name }));
+            dispatch(updatePost(currentId, { ...postData, name: user?.result?.name }));
         }
         clear();  // Call function clear to remove everything once is submited
     }
@@ -51,7 +52,7 @@ function Form({ currentId, setCurrentId }) {
             <Paper className={classes.paper}>
                 <form autoComplete='off' noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
                                 {/* Edit OR Create A memory */}
-                    <Typography variant='h6'>{currentId ? 'Editing' : 'Creating'} a Memory</Typography>  
+                    <Typography variant='h6'> {currentId ? `Editing ${post.title}` : 'Creating a Memory'} </Typography>  
                     
 
                     {/* title */}
@@ -63,7 +64,7 @@ function Form({ currentId, setCurrentId }) {
                     value={postData.title} 
                     onChange={(e) => setPostData({ ...postData, title: e.target.value })} 
                     />  
-
+             
                     {/* message */}
                     <TextField 
                     name='message' 

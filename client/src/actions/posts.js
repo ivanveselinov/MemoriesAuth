@@ -15,23 +15,25 @@ export const getPosts = () => async (dispatch) => {
     }
 }
                     //Write Post
-export const createPosts = (post) => async (dispatch) => {
+export const createPost = (post) => async (dispatch) => {
         try {
             const { data } = await api.createPost(post);
             dispatch ({ type: CREATE , payload: data})
+            
         } catch (error) {
-            console.log(error);
+            console.log('hate me',error);
         }
     }
                     //Update Post
 export const updatePost = (id, post) => async (dispatch) => {
     try {
-        const { data } = await api.updatePost(id,post);
+        const { data } = await api.updatePost(id, post);
         dispatch({ type: UPDATE, payload: data })
     } catch (error) {
-        console.log(error);
+        console.log('love me',error);
     }
 }
+
     
                     //Delete Post
 export const deletePost = (id) => async (dispatch) => {

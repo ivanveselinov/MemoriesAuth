@@ -18,18 +18,18 @@ export const getPosts = async (req, res) => {
     }
 }
 
-//                 // get post by ID
-// export const getPost = async (req, res) => { 
-//     const { id } = req.params;
+                // get post by ID
+export const getPost = async (req, res) => { 
+    const { id } = req.params;
 
-//     try {
-//         const post = await PostMessage.findById(id);
+    try {
+        const post = await PostMessage.findById(id);
         
-//         res.status(200).json(post);
-//     } catch (error) {
-//         res.status(404).json({ message: error.message });
-//     }
-// }
+        res.status(200).json(post);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+}
 
                 // CREATE
 export const createPost = async (req, res) => {
@@ -63,7 +63,7 @@ export const updatePost = async (req, res) => {
 export const deletePost = async (req, res) => {
     const { id } = req.params;
 
-    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`); 
 
     await PostMessage.findByIdAndRemove(id);
 
@@ -94,4 +94,3 @@ export const likePost = async (req, res) => {
     res.status(200).json(updatedPost);
 
 }
-

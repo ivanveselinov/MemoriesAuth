@@ -5,7 +5,6 @@ const secret = 'test';
     //request //response //do something and move to next thing
 const auth = async (req, res, next) => {
     try {
-        
         const token = req.headers.authorization.split(" ")[1];
         const isCustomAuth = token.length < 500; // if token is greater then 500 then we are going with Google Auth else Login Sign up
 
@@ -33,3 +32,4 @@ export default auth;
 // then when he click the button is going to auth middleware and checking if
 // he has permission to like or do what ever with someprogram 
 // That is why we should have next(); at the end. 
+

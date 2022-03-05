@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import { deletePost, likePost } from '../../../actions/posts';
 
 
+
 function Post({ post, setCurrentId }) {
     const classes = useStyles();
     const dispatch = useDispatch();
@@ -32,19 +33,25 @@ function Post({ post, setCurrentId }) {
     
     return (
        <Card className={classes.card}>
+
                      {/* Image on Show */}
            <CardMedia className={classes.media} image={post.selectedFile} title={post.title}/>
+
                      {/* Name - Creator */}
            <div className={classes.overlay}>
               <Typography variant="h6">{post.name}</Typography>
               <Typography variant="body2">{moment(post.createdAt).fromNow()}</Typography>
            </div>
-                        {/* Edit Button */}
+
+                        {/* Edit Button */}    {/* creator is currently login in */}
+                        {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && (
            <div className={classes.overlay2}>
               <Button style={{color: 'white'}} size="small" onClick={() => setCurrentId(post._id)}>
                    <MoreHorizIcon fontSize="default" />  
               </Button>
            </div>
+                        )}
+
                         {/* # */}
            <div className={classes.details}>
                 <Typography variant="body2" color="textSecondary">{post.tags.map((tag) => `#${tag}` )}</Typography>  
@@ -58,17 +65,20 @@ function Post({ post, setCurrentId }) {
 
                         {/* Card For Like and Delete  */}
            <CardActions className={classes.cardActions}>
-              
-                        {/* LIKE */}
+
+                        {/* LIKE */}                   {/*  if not user disable */} 
                <Button size="small" color="primary" disabled={!user?.result} onClick= {() => dispatch(likePost(post._id)) }>
                      <Likes/> {/* Import Component */}
                </Button>
-                        {/* DELETE */}
-               <Button size="small" color="primary" onClick= {() => dispatch(deletePost(post._id))}>
+
+                        {/* DELETE */}                        {/* or */}     {/*If user is creted post he can remove*/}   
+                        {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && ( 
+               <Button size="small" color="secondary" onClick= {() => dispatch(deletePost(post._id))}>
                   <DeleteIcon fontSize="small" />
                       Delete
                </Button>
-
+            )}
+           
            </CardActions>
        </Card>
     )
