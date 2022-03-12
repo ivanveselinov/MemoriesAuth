@@ -5,7 +5,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 
 import postRoutes from './routes/posts.js' // Import postsRoutes -> posts.js
-import userRoutes from './routes/users.js' // Import UsersRoutes -> users.js
+import userRoutes from './routes/Users.js' // Import UsersRoutes -> users.js
 
 const app = express();
 dotenv.config();
@@ -16,6 +16,11 @@ app.use(cors());
 
 app.use('/posts', postRoutes); // posts.js routes is now setuped localhost:4000/posts
 app.use('/user',userRoutes);    // user.js routes is not setuped localhost:4000/posts
+
+//Heroku Things
+app.get('/', (req, res) => {
+    res.send('Hello to memories API');
+});
 
 //connection to db
 const PORT = process.env.PORT || 4000; // Add port 
