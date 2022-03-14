@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Project 4
+## Share a Memory
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This Project is made for **learning purposes**
+This Web Application was created to help people create and share their photo memories to an online platform very similar to Facebook and Instagram. It allows other people to view and like their posted memories with friends.
+To use this Application you have to sign up and login or to login with SSO ( Google Authentication). After login you can create, update and  remove your memories and like other people's memories. This is a great application which you can use to keep in contact and create memories with not just family but friends and random followers as well.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Technologies
 
-### `npm start`
+To create this project we use following Technologies:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* **React.js**
+* **Bootstrap**
+* **Node.js**
+* **Express.js**
+* **Mongodb**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Launch
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This Web Application is working on:
 
-### `npm run build`
+* **Mozila Firefox**
+* **Google Chrome**
+* **Safari**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Its also responsive to every other device so you can freely run
+starting from screen that supports **200px** resolution till **Max**.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Officially launched on **13.03.2022**.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You can access the Web Application by pressing
+this link : [Share A Memory](https://memoriesshare.netlify.app/)
 
-### `npm run eject`
+This Application is also responsive on every device including:
+* **Desktop Computer**
+* **LapTop**
+* **Tablet**
+* **Mobile Phone**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Feature improvements
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Create filters to search through every memory
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This Web Application is made by **Ivan Veselinov**
