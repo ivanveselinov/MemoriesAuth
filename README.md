@@ -2,7 +2,7 @@
 ## Share a Memory
 
 This Project is made for **learning purposes**
-This Web Application was created to help people create and share their photo memories to an online platform very similar to Facebook and Instagram. It allows other people to view and like their posted memories with friends.
+This Web Application was created to help people share their photo memories to an online platform very similar to Facebook and Instagram. The app also allows other people to view and like the already posted memories.
 To use this Application you have to sign up and login or to login with SSO ( Google Authentication). After login you can create, update and  remove your memories and like other people's memories. This is a great application which you can use to keep in contact and create memories with not just family but friends and random followers as well.
 
 
