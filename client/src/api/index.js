@@ -1,6 +1,8 @@
 import axios from 'axios';
                                     // Heroku                                 // LocalHost
-const API = axios.create({ baseURL: 'https://memone.herokuapp.com/' || 'http://localhost:4000' })
+// const API = axios.create({ baseURL: 'https://memone.herokuapp.com/' || 'http://localhost:4000' })
+const API = axios.create({ baseURL: 'https://memoriesserver-bq0z.onrender.com' || 'http://localhost:4000' })
+// const API = axios.create({ baseURL: 'http://localhost:4000' });
 
 // To check for users from middleware
 API.interceptors.request.use((req) => { 
