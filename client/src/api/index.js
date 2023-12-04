@@ -1,8 +1,10 @@
 import axios from 'axios';
 // if host is not wori
                                     // Heroku                                 // LocalHost
-const API = axios.create({ baseURL: 'https://memoriesauth-production.up.railway.app/' || 'http://localhost:4000' })
-// const API = axios.create({ baseURL: 'http://localhost:4000' });
+
+const API = axios.create({ baseURL: 'https://memories-auth-api.vercel.app/' || 'http://localhost:4000' })
+// const API = axios.create({ baseURL: 'https://memoriesauth-production.up.railway.app/' || 'http://localhost:4000' })
+// const API = axios.create({ baseURL: 'http://localhost:4000'|| 'https://memoriesauth-production.up.railway.app/'});
 // please note if main link is not working, it will not switch to localhost !!!!!!
 
 // To check for users from middleware
